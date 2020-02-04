@@ -178,6 +178,9 @@ server:
   # in a PodSpec.
   tolerations: {}
 
+  # The capabilities for add for server pods.
+  addCapabilities: ["IPC_LOCK"]
+
   # nodeSelector labels for server pod assignment, formatted as a muli-line string.
   # ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
   # Example:

@@ -50,6 +50,9 @@ spec:
         {{ template "vault.volumes" . }}
       containers:
         - name: vault
+          securityContext:
+            capabilities:
+              add: {{ .Values.server.addCapabilities }}
           {{ template "vault.resources" . }}
           image: {{ .Values.server.image.repository }}:{{ .Values.server.image.tag | default "latest" }}
           imagePullPolicy: {{ .Values.server.image.pullPolicy }}
